@@ -18,8 +18,8 @@ function AppRouter() {
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/register" component={Signup} />
-        <Route exact path="/login" component={Signin} />
+        <Route exact path="/register" component={!currentUser ? Signup : Main} />
+        <Route exact path="/login" component={!currentUser ? Signin : Main } />
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route
           exact

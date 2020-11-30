@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, capitalize } from '@material-ui/core';
-import axios from 'axios';
-import MediaCard from '../components/MediaCard';
-import { fetchData } from '../helper/FetchData';
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Container, Grid, capitalize } from "@material-ui/core";
+import axios from "axios";
+import MediaCard from "../components/MediaCard";
+import { fetchData } from "../helper/FetchData";
 
 const stylesFunc = makeStyles((theme) => ({
 	wrapper: {
-		paddingTop: '5rem',
-		height: 'calc(100vh - 9.0625rem)',
-		textAlign: 'center',
-		overflow : 'auto',
-		backgroundColor : '#bdbdbd',
+		paddingTop: "5rem",
+		height: "calc(100vh - 9.0625rem)",
+		textAlign: "center",
+		overflow : "auto",
+		backgroundColor : "#bdbdbd",
 	},
 	avatar: {
-		margin: '1rem auto',
+		margin: "1rem auto",
 		backgroundColor: theme.palette.secondary.main,
 	},
 }));
@@ -26,7 +26,7 @@ function Main() {
 
 
 	useEffect(() => {
-		fetchData('/user').then((response) => setUserList(response.data));
+		fetchData("/user").then((response) => setUserList(response.data));
 	}, []);
 
 	return (
