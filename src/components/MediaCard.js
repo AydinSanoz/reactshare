@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     },
   },
   media: {
+    paddingTop : 4,
     height: 140,
     backgroundSize: "contain"
   },
