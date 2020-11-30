@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchData } from "../helper/FetchData";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchData } from '../helper/FetchData';
+import { makeStyles } from '@material-ui/core/styles';
 import {
 	Container,
 	CircularProgress,
 	Grid,
 	capitalize,
-} from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import { formatDateFunc } from "../helper/FormatDate";
+} from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import { formatDateFunc } from '../helper/FormatDate';
 
 const stylesFunc = makeStyles((theme) => ({
 	wrapper: {
-		height: "calc(100vh - 9.0625rem)",
-    backgroundColor: "#bdbdbd",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+		height: 'calc(100vh - 9.0625rem)',
+
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
 	},
 	avatar: {
-		margin: "1rem auto",
+		margin: '1rem auto',
 		backgroundColor: theme.palette.secondary.main,
 	},
+	circularProgress :{
+		display : "block",
+		margin : "auto",
+	  },
 }));
 function UserDetail() {
 	const { id } = useParams();
@@ -31,7 +35,7 @@ function UserDetail() {
 	const [userDetail, setUserDetail] = useState();
 	useEffect(() => {
 		console.log(
-			"🚀 ~ file: UserDetail.js ~ line 27 ~ UserDetail ~ userDetail",
+			'🚀 ~ file: UserDetail.js ~ line 27 ~ UserDetail ~ userDetail',
 			userDetail
 		);
 		fetchData(`/user/${id}`)
@@ -43,7 +47,7 @@ function UserDetail() {
 	return (
 		<Container className={mainStyles.wrapper}>
 			{!userDetail ? (
-				<CircularProgress />
+				<CircularProgress  className = {mainStyles.circularProgress}/>
 			) : (
 				<Grid
 					container
@@ -60,33 +64,34 @@ function UserDetail() {
 							{`${capitalize(userDetail?.title)} ${
 								userDetail?.firstName
 							} ${userDetail?.lastName}`}
-						</Typography>{" "}
+						</Typography>{' '}
 						<br />
 						<Typography variant="h9">
 							<b>Gender : </b> {capitalize(userDetail?.gender)}
-						</Typography>{" "}
+						</Typography>{' '}
 						<br />
 						{userDetail?.registerDate && (
 							<Typography variant="h9">
 								<b> Date Of Birth: </b>
 								{formatDateFunc(userDetail.dateOfBirth)}
 							</Typography>
-						)}{" "}
+						)}{' '}
 						<br />
 						{userDetail?.registerDate && (
 							<Typography variant="h9">
 								<b>Register Date: </b>
 								{formatDateFunc(userDetail.registerDate)}
 							</Typography>
-						)}{" "}
+						)}{' '}
 						<br />
 						<Typography variant="h9">
-            <b>Email: </b> {userDetail?.email}
-						</Typography>{" "}
+							<b>Email: </b> {userDetail?.email}
+						</Typography>{' '}
 						<br />
 						<Typography variant="h9">
-            <b>Phone:</b>{userDetail?.phone}
-						</Typography>{" "}
+							<b>Phone:</b>
+							{userDetail?.phone}
+						</Typography>{' '}
 						<br />
 					</Grid>
 					<Grid item xs={4}></Grid>

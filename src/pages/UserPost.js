@@ -18,6 +18,10 @@ const stylesFunc = makeStyles((theme) => ({
     margin: "1rem auto",
     backgroundColor: theme.palette.secondary.main,
   },
+  circularProgress :{
+    display : "block",
+    margin : "auto",
+  },
 }));
 function UserPost() {
   const { id } = useParams();
@@ -36,7 +40,7 @@ function UserPost() {
   return (
     <Container className={mainStyles.wrapper}>
       {!userPost ? (
-        <CircularProgress />
+        <CircularProgress className = {mainStyles.circularProgress}/>
       ) : (
         <Grid container spacing={1}>
           {userPost?.map((post) => {
