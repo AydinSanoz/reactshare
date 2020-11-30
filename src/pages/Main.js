@@ -8,7 +8,7 @@ import { fetchData } from "../helper/FetchData";
 const stylesFunc = makeStyles((theme) => ({
 	wrapper: {
 		paddingTop: "5rem",
-		height: "calc(100vh - 9.0625rem)",
+		minHeight: "calc(100vh - 19.0625rem)",
 		textAlign: "center",
 		overflow : "auto",
 		backgroundColor : "#bdbdbd",
