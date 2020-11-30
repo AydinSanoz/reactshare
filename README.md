@@ -1,3 +1,4 @@
+## [ReactShare](https://aydinsanoz.github.io/reactshare/)
 ##.env file
 
 ```
@@ -13,3 +14,33 @@ REACT_APP_API_TOKEN=
 REACT_APP_API_BASE_URL =
 REACT_APP_API_TOKEN =
 ```
+
+### easy way to deploy react App 
+- - First
+- 
+```yarn add gh-pages```
+
+- - Second Add below to Json File 
+
+```json
+  "name": "imdb",
+  "version": "0.1.0",
+  "homepage": "https://AydinSanoz.github.io/imdb-react",  // Add this and change according to your reponame 
+  "dependencies": {
+    "@cantonjs/react-scroll-view": "^0.4.2",
+ 
+
+```
+
+```json
+    "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",  // Add this line
+    "deploy": "gh-pages -d build"  // Add this one too
+  },
+```
+- - Last Step 
+  yarn run deploy
