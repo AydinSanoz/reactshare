@@ -19,8 +19,12 @@ const config = process.env.NODE_ENV === "development" ? devConfig : prodConfig;
 
 class Firebase {
 	constructor() {
-		//TODO: add initialize check :: if (firebase.apps.length === 0)
-		firebase.initializeApp(config);
+    //TODO: add initialize check :: if (firebase.apps.length === 0)
+    if (firebase.apps.length === 0){
+      firebase.initializeApp(config)
+    }
+    
+    console.log(firebase.apps)
 		this.firebaseAuth = firebase.auth();
 	}
 
