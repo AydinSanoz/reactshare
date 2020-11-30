@@ -1,4 +1,6 @@
 ## [ReactShare Project Website](https://aydinsanoz.github.io/reactshare/)
+
+![screenshot of projects](./out.gif)
 ##.env file
 
 ```
