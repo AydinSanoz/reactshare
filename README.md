@@ -4,17 +4,19 @@
 ##.env file
 
 ```
-REACT_APP_API_KEY=
-REACT_APP_AUTH_DOMAIN=
-REACT_APP_DATABASE_URL=
-REACT_APP_PROJECT_ID=
-REACT_APP_STORAGE_BUCKET=
-REACT_APP_MESSAGING_SENDER_ID=
-REACT_APP_ID=
-REACT_APP_API_TOKEN=
+REACT_APP_API_KEY=<Firebase Api>
+REACT_APP_AUTH_DOMAIN="reactshare-3c3ac.firebaseapp.com"
+REACT_APP_DATABASE_URL="https://reactshare-3c3ac.firebaseio.com"
+REACT_APP_PROJECT_ID="reactshare-3c3ac"
+REACT_APP_STORAGE_BUCKET="reactshare-3c3ac.appspot.com"
+REACT_APP_MESSAGING_SENDER_ID="54001819488"
+REACT_APP_ID="1:54001819488:web:28c2eedb06377ffb5b0805"
 
-REACT_APP_API_BASE_URL =
-REACT_APP_API_TOKEN =
+
+REACT_APP_API_BASE_URL ="https://dummyapi.io/data/api"
+REACT_APP_API_TOKEN =<dummp.ip Api token>
+
+
 ```
 
 ### easy way to deploy react App 
